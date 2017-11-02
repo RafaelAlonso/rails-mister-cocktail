@@ -1,5 +1,9 @@
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
+<div class="form">
+  <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name, placeholder: "name of cocktail", input_html: { class: 'input-sm' } %>
 
-  <%= f.button :submit %>
-<% end %>
+    <div class="button">
+      <%= f.button :submit, class: 'btn btn-sm btn-primary' %>
+    </div>
+  <% end %>
+</div>

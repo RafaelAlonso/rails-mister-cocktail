@@ -1,15 +1,27 @@
 <% @cocktail = @cocktail.nil? ? Cocktail.find(id) : @cocktail %>
 
-<h1><%= @cocktail.name %></h1>
-<h2>You will need:</h2>
-<ul>
-  <% @cocktail.ingredients.each do |ingredient| %>
-    <li><%= ingredient.name %></li>
-  <% end %>
-</ul>
-<h2>How to do it:</h2>
-<% @cocktail.doses.each do |dose| %>
-  - <%= dose.description %><br>
-<% end %>
+<div class="container">
+  <h1 class="text-center"><%= @cocktail.name %></h1>
 
-<%= render 'doses/form' %>
+  <div class="ingredients">
+    <h2>You will need:</h2>
+    <ul>
+      <% @cocktail.ingredients.each do |ingredient| %>
+        <li><%= ingredient.name %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="recipe">
+    <h2>How to do it:</h2>
+    <% @cocktail.doses.each do |dose| %>
+      <% if dose.description != "" %>
+        - <%= dose.description %><br>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="new-dose">
+    <%= render 'doses/form' %>
+  </div>
+</div>
