@@ -3,11 +3,16 @@
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-6 col-sm-4 col-md-3">
         <div class="cocktail-card">
-          <div class="cocktail-img">
-            <%= image_tag @cocktails.img_url(:bright_face) %>
+          <div class="delete-x text-right">
+            <%= link_to '<i class="fa fa-times"></i>'.html_safe, cocktail_path(cocktail), method: :delete, data: { confirm: "Sure?" } %>
           </div>
-          <div class="cocktail-name">
-            <h4><%= link_to cocktail.name, cocktail_path(cocktail) %></h4>
+          <div class="cocktail-content">
+            <div class="cocktail-img">
+              <%= image_tag cocktail.photo.url(:standard) if cocktail.photo? %>
+            </div>
+            <div class="cocktail-name">
+              <h4><%= link_to cocktail.name, cocktail_path(cocktail) %></h4>
+            </div>
           </div>
         </div>
       </div>

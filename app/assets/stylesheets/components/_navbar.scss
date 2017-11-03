@@ -59,6 +59,9 @@
   .form label{
     display:none;
   }
+  .form input[type="file"]{
+    font-size: 12px;
+  }
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
