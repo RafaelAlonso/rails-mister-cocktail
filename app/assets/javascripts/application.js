@@ -15,3 +15,6 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+$('.dropdown-toggle').click(function() {
+  alert( "Handler for .click() called." );
+});
