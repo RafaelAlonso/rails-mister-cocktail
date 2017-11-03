@@ -1,21 +1,23 @@
 <div class="container text-center cocktails">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-xs-6 col-sm-4 col-md-3">
-        <div class="cocktail-card">
-          <div class="delete-x text-right">
-            <%= link_to '<i class="fa fa-times"></i>'.html_safe, cocktail_path(cocktail), method: :delete, data: { confirm: "Sure?" } %>
-          </div>
-          <div class="cocktail-content">
-            <div class="cocktail-img">
-              <%= image_tag cocktail.photo.url(:standard), class: "mirrored" if cocktail.photo? %>
+      <%= link_to cocktail_path(cocktail) do %>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+          <div class="cocktail-card">
+            <div class="delete-x text-right">
+              <%= link_to '<i class="fa fa-times"></i>'.html_safe, cocktail_path(cocktail), method: :delete, data: { confirm: "Sure?" } %>
             </div>
-            <div class="cocktail-name">
-              <h4><%= link_to cocktail.name, cocktail_path(cocktail) %></h4>
+            <div class="cocktail-content">
+              <div class="cocktail-img">
+                <%= image_tag cocktail.photo.url(:standard), class: "mirrored" if cocktail.photo? %>
+              </div>
+              <div class="cocktail-name">
+                <h4><%= link_to cocktail.name, cocktail_path(cocktail) %></h4>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>

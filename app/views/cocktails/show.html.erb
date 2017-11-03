@@ -1,4 +1,5 @@
 <% @cocktail = @cocktail.nil? ? Cocktail.find(id) : @cocktail %>
+<% @review   = @review.nil? ? Review.new : @review %>
 
 <div class="container">
 
@@ -15,7 +16,8 @@
   </div>
 
   <div class="ingredients">
-    <h3>You will need:</h3>
+    <h3 class="text-center">Recipe</h3>
+    <h4>You will need:</h4>
     <ul>
       <% @cocktail.ingredients.each do |ingredient| %>
         <li><%= link_to ingredient.name, ingredient_path(ingredient) %></li>
@@ -24,7 +26,7 @@
   </div>
 
   <div class="recipe">
-    <h3>How to do it:</h3>
+    <h4>How to do it:</h4>
     <% @cocktail.doses.each do |dose| %>
       <% if dose.description != "" %>
         - <%= dose.description %><br>
@@ -33,7 +35,8 @@
   </div>
 
   <div class="reviews-container">
-    <h3>Reviews</h3>
+    <h3 class="text-center">Reviews</h3>
+    <%= '<h4>No reviews yet</h4>'.html_safe if @cocktail.reviews.empty? %>
     <% @cocktail.reviews.each do |review| %>
       <div class="review">
         <p><%= review.comment %></p>
