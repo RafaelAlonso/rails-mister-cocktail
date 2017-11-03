@@ -32,18 +32,20 @@
     <% end %>
   </div>
 
-  <div class="reviews">
+  <div class="reviews-container">
     <h3>Reviews</h3>
     <% @cocktail.reviews.each do |review| %>
-      <p><%= review.comment %></p>
-      <p>
-        <%review.rating.times { %><i class='fa fa-star'></i> <% } %>
-        <%(5 - review.rating).times { %><i class='fa fa-star-o'></i> <% } %>
-      </p>
+      <div class="review">
+        <p><%= review.comment %></p>
+        <p>
+          <%review.rating.times { %><i class='fa fa-star'></i> <% } %>
+          <%(5 - review.rating).times { %><i class='fa fa-star-o'></i> <% } %>
+        </p>
+      </div>
     <% end %>
   </div>
 
-  <div class="new-dose">
+  <div class="forms-container">
     <div class="row">
       <div class="col-xs-6">
         <%= render 'doses/form' %>

@@ -5,8 +5,9 @@ body{
 
 a{
   color: white;
-  &:hover{
+  &:hover, &:active{
     text-decoration: none;
     color: #DF5438;
   }
+
 }
