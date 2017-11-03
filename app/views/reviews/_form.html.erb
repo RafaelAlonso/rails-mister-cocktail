@@ -1,0 +1,11 @@
+<div class="form embedded-form">
+  <h3 class="text-center">Add a Review</h3>
+  <%= simple_form_for [@cocktail, @review] do |f| %>
+    <%= f.input :comment, input_html: { class: "input-sm" } %>
+    <%= f.input :rating, label: "Rating", as: :select, collection: 0..5 %>
+
+    <div class="button">
+      <%= f.button :submit, value: "Add review", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

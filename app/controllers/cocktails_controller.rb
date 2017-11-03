@@ -19,6 +19,7 @@ class CocktailsController < ApplicationController
   def show
     @cocktail = Cocktail.find(params[:id])
     @dose = Dose.new
+    @review = Review.new
   end
 
   def destroy
@@ -29,6 +30,6 @@ class CocktailsController < ApplicationController
 
   private
   def cocktails_params
-    params.require(:cocktail).permit(:name, :photo, :photo_cache)
+    params.require(:cocktail).permit(:name, :nationality, :photo, :photo_cache)
   end
 end
