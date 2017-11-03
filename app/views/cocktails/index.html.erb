@@ -8,7 +8,7 @@
           </div>
           <div class="cocktail-content">
             <div class="cocktail-img">
-              <%= image_tag cocktail.photo.url(:standard) if cocktail.photo? %>
+              <%= image_tag cocktail.photo.url(:standard), class: "mirrored" if cocktail.photo? %>
             </div>
             <div class="cocktail-name">
               <h4><%= link_to cocktail.name, cocktail_path(cocktail) %></h4>
