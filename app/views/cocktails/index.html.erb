@@ -1,5 +1,14 @@
-<div class="container text-center">
-  <% @cocktails.each do |cocktail| %>
-    <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-  <% end %>
+<div class="container text-center cocktails">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="cocktail-card">
+          <div class="cocktail-img"></div>
+          <div class="cocktail-name">
+            <h4><%= link_to cocktail.name, cocktail_path(cocktail) %></h4>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

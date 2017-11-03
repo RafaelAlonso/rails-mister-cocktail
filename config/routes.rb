@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     #   get '/top', to: "cocktails#top"
     # end
   end
+  resources :ingredients, only: [:show]
   delete 'doses/:id', to: 'doses#destroy'
 
   root 'cocktails#index'
