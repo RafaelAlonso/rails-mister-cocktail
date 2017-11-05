@@ -1,18 +1,26 @@
+<%= render 'shared/banner' %>
+
 <div class="container text-center cocktails">
+  <h1>All our Cocktails</h1>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <%= link_to cocktail_path(cocktail) do %>
         <div class="col-xs-6 col-sm-4 col-md-3">
           <div class="cocktail-card">
+            <%= link_to '', cocktail_path(cocktail), class: 'card-link' %>
             <div class="delete-x text-right">
-              <%= link_to '<i class="fa fa-times"></i>'.html_safe, cocktail_path(cocktail), method: :delete, data: { confirm: "Sure?" } %>
+              <%= link_to cocktail_path(cocktail), data: { method: :delete, confirm: 'Are you sure?' } do %>
+                <i class="fa fa-times"></i>
+              <% end %>
             </div>
             <div class="cocktail-content">
-              <div class="cocktail-img">
-                <%= image_tag cocktail.photo.url(:standard), class: "mirrored" if cocktail.photo? %>
-              </div>
+              <%= link_to cocktail_path(cocktail) do %>
+                <div class="cocktail-img">
+                  <%= image_tag cocktail.photo.url(:standard), class: "mirrored" if cocktail.photo? %>
+                </div>
+              <% end %>
               <div class="cocktail-name">
-                <h4><%= link_to cocktail.name, cocktail_path(cocktail) %></h4>
+                <h4><%= cocktail.name %></h4>
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@
   <h3 class="text-center">Add a new Dose</h3>
   <%= simple_form_for [@cocktail, @dose] do |f| %>
     <%= f.input :description, input_html: { class: "input-sm" } %>
-    <%= f.input :ingredient_id, label: "Ingredient used", as: :select,  collection: Ingredient.all %>
+    <%= f.input :ingredient_id, label: "Ingredient used", as: :select,  collection: Ingredient.order(:name) %>
 
     <div class="button">
       <%= f.button :submit, class: "btn btn-success" %>

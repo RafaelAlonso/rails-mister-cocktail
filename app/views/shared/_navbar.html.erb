@@ -1,6 +1,6 @@
 <% @cocktail = Cocktail.new %>
 
-<div class="navbar-wagon">
+<div class="navbar-wagon text-center">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
     <%= image_tag 'logo.jpg' %>
@@ -10,12 +10,7 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <%= link_to "All Cocktails", cocktails_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <div class="dropdown">
-       <div class="dropdown-toggle navbar-wagon-link" data-toggle="dropdown">New Cocktail</div>
-       <div class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu text-center">
-         <%= render 'cocktails/form' %>
-       </div>
-    </div>
+    <%= link_to "New Cocktail", new_cocktail_path, class: "navbar-wagon-item navbar-wagon-link" %>
   </div>
 
   <!-- Dropdown appearing on mobile only -->
@@ -30,3 +25,8 @@
     </div>
   </div>
 </div>
+
+<!-- <div class="dropdown-toggle navbar-wagon-link" data-toggle="dropdown">New Cocktail</div> -->
+     <!-- <div class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu text-center"> -->
+
+     <!-- </div> -->

@@ -1,7 +1,7 @@
 <div class="form">
   <%= simple_form_for @cocktail do |f| %>
     <%= f.input :name, placeholder: "name of cocktail", input_html: { class: 'input-sm' } %>
-    <%= f.input :nationality, placeholder: "Nationality", input_html: { class: 'input-sm' } %>
+    <%= f.input :nationality, as: :select, collection: Cocktail::NATIONALITIES, input_html: { class: 'input-sm' } %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
 
