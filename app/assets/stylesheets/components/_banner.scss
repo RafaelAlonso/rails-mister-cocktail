@@ -5,6 +5,9 @@
   text-align: center;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   height: calc(90vh - 50px);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover !important;
   display: flex;
   flex-direction: row-reverse;
