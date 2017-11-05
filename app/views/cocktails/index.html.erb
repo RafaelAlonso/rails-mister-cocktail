@@ -1,7 +1,7 @@
 <%= render 'shared/banner' %>
 
 <div class="container text-center cocktails">
-  <h1>All our Cocktails</h1>
+  <h1>All Our Cocktails</h1>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <%= link_to cocktail_path(cocktail) do %>
