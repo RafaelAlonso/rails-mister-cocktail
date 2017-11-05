@@ -14,14 +14,14 @@
               <% end %>
             </div>
             <div class="cocktail-content">
+              <div class="cocktail-name">
+                <h4><%= cocktail.name %></h4>
+              </div>
               <%= link_to cocktail_path(cocktail) do %>
                 <div class="cocktail-img">
                   <%= image_tag cocktail.photo.url(:standard), class: "mirrored" if cocktail.photo? %>
                 </div>
               <% end %>
-              <div class="cocktail-name">
-                <h4><%= cocktail.name %></h4>
-              </div>
             </div>
           </div>
         </div>
